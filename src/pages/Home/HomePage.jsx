@@ -1,63 +1,23 @@
-// ─────────────────────────────────────────────────────────────
-//  HomePage — Root page composition
-//  Renders all modules based on enabled prop and content data
-// ─────────────────────────────────────────────────────────────
 import React from "react";
-import Navbar          from "../../components/layout/Navbar/Navbar";
-import Hero            from "./Hero/Hero";
-import CategoryGrid    from "./CategoryGrid/CategoryGrid";
-import FeaturedProducts from "./FeaturedProducts/FeaturedProducts";
-import DealsSection    from "./DealsSection/DealsSection";
-import Newsletter      from "./Newsletter/Newsletter";
-import Footer          from "../../components/layout/Footer/Footer";
+import Navbar from "../../components/layout/Navbar/Navbar";
+import Footer from "../../components/layout/Footer/Footer";
+import { Box, Container, Typography } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import { BRAND } from "../../theme/theme";
 
-const HomePage = ({
-  navbar          = {},
-  hero            = {},
-  categoryGrid    = {},
-  featuredProducts = {},
-  dealsSection    = {},
-  newsletter      = {},
-  footer          = {},
-}) => {
+const HomePage = ({ navbar={}, footer={} }) => {
+  const theme = useTheme();
   return (
     <>
-      {/* ── Navbar ────────────────────────────────────── */}
-      {navbar?.enabled !== false && (
-        <Navbar {...navbar} />
-      )}
-
-      {/* ── Hero ──────────────────────────────────────── */}
-      {hero?.enabled && hero?.slides?.length > 0 && (
-        <Hero {...hero} />
-      )}
-
-      {/* ── Category Grid ─────────────────────────────── */}
-      {categoryGrid?.enabled && categoryGrid?.categories?.length > 0 && (
-        <CategoryGrid {...categoryGrid} />
-      )}
-
-      {/* ── Featured Products ─────────────────────────── */}
-      {featuredProducts?.enabled && featuredProducts?.products?.length > 0 && (
-        <FeaturedProducts {...featuredProducts} />
-      )}
-
-      {/* ── Deals Section ─────────────────────────────── */}
-      {dealsSection?.enabled && dealsSection?.deals?.length > 0 && (
-        <DealsSection {...dealsSection} />
-      )}
-
-      {/* ── Newsletter ────────────────────────────────── */}
-      {newsletter?.enabled !== false && (
-        <Newsletter {...newsletter} />
-      )}
-
-      {/* ── Footer ────────────────────────────────────── */}
-      {footer?.enabled !== false && (
-        <Footer {...footer} />
-      )}
+      <Navbar {...navbar} />
+      <Box sx={{ minHeight:"80vh", display:"flex", alignItems:"center", justifyContent:"center", background:`linear-gradient(135deg,${theme.palette.primary.main} 0%,${theme.palette.primary.dark} 100%)` }}>
+        <Container maxWidth="md" sx={{ textAlign:"center", py:10 }}>
+          <Typography variant="h1" sx={{ color:"#fff", mb:3, fontFamily:BRAND.fontDisplay }}>Luxury Redefined</Typography>
+          <Typography sx={{ color:"rgba(255,255,255,0.7)", fontSize:"1.1rem", fontFamily:BRAND.fontBody }}>Use the page switcher below to navigate to Product Listing or Product Detail.</Typography>
+        </Container>
+      </Box>
+      <Footer {...footer} />
     </>
   );
 };
-
 export default HomePage;
