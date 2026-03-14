@@ -26,7 +26,6 @@ const SavedCard = ({ item, onMoveToCart, onRemove, currency }) => {
   const theme = useTheme();
   return (
     <Box sx={{
-      height:      BRAND.savedCardHeight, // Fixed height for consistent card layout
       border:       `1px solid ${theme.palette.divider}`,
       borderRadius: BRAND.radiusCard,
       bgcolor:      theme.palette.background.paper,
@@ -42,7 +41,7 @@ const SavedCard = ({ item, onMoveToCart, onRemove, currency }) => {
       {/* Image */}
       <Box sx={{
         width:       "100%",
-        height:      BRAND.savedCardImageHeight, // Fixed height for consistent image size
+        aspectRatio: "3 / 3.5",
         overflow:    "hidden",
         bgcolor:     theme.palette.background.default,
       }}>
@@ -60,15 +59,7 @@ const SavedCard = ({ item, onMoveToCart, onRemove, currency }) => {
       </Box>
 
       {/* Info */}
-      <Box sx={{ 
-        flex: 1, // Take remaining space
-        px: { xs: 1.25, md: 1.5 }, 
-        pt: 1.25, 
-        pb: 1.5, 
-        display: "flex", 
-        flexDirection: "column", 
-        gap: 0.75 
-      }}>
+      <Box sx={{ px: { xs: 1.25, md: 1.5 }, pt: 1.25, pb: 1.5, display: "flex", flexDirection: "column", gap: 0.75 }}>
         {item?.brand && (
           <Typography sx={{
             fontFamily:    BRAND.fontBody,
@@ -105,7 +96,7 @@ const SavedCard = ({ item, onMoveToCart, onRemove, currency }) => {
         />
 
         {/* Action buttons */}
-        <Box sx={{ display: "flex", gap: 0.75, mt: "auto" }}>
+        <Box sx={{ display: "flex", gap: 0.75, mt: 0.5 }}>
           <Tooltip title="Move to cart">
             <IconButton
               size="small"

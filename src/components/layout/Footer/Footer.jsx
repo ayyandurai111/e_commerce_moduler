@@ -9,10 +9,11 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { BRAND } from "../../../theme/theme";
+import storeConfig from "../../../config/store/storeConfig";
 
 const SOCIAL_MAP = { facebook:<FacebookIcon/>, instagram:<InstagramIcon/>, twitter:<TwitterIcon/>, pinterest:<PinterestIcon/> };
 
-const Footer = ({ enabled=true, storeName="LUXE STORE", tagline="Refined Living, Delivered.", description="Curating premium products from around the world.", social={}, shopLinks=[], helpLinks=[], contact={}, paymentMethods=[], hours="" }) => {
+const Footer = ({ enabled=true, storeName=storeConfig.name, tagline=storeConfig.tagline, description=storeConfig.description, social={}, shopLinks=[], helpLinks=[], contact={}, paymentMethods=[], hours="" }) => {
   const theme = useTheme();
   if (!enabled) return null;
   const year = new Date().getFullYear();

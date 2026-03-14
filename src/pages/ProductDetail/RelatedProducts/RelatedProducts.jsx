@@ -13,7 +13,7 @@ import { useTheme }        from "@mui/material/styles";
 import { BRAND }           from "../../../theme/theme";
 import ProductCard, { ProductCardGrid } from "../../../components/common/ProductCard/ProductCard";
 
-const RelatedProducts = ({ products = [], onProductClick, onAddToCart, currency = "$", sx = {} }) => {
+const RelatedProducts = ({ products = [], onProductClick, onAddToCart, currency = "₹", sx = {} }) => {
   const theme = useTheme();
   if (!products?.length) return null;
 

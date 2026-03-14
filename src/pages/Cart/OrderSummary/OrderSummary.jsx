@@ -314,7 +314,7 @@ const OrderSummary = ({
             textAlign:  "center",
             letterSpacing: "0.03em",
           }}>
-            Visa · Mastercard · Amex · PayPal · Apple Pay
+            Visa · Mastercard · Amex · PayPal · UPI
           </Typography>
         </Box>
       </Box>

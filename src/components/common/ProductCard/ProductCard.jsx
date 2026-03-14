@@ -80,7 +80,7 @@ export const ProductCardGrid = ({ children }) => {
   );
 };
 
-const ProductCard = ({ product={}, viewMode="grid", currency="$", onAddToCart, onQuickView }) =>
+const ProductCard = ({ product={}, viewMode="grid", currency="₹", onAddToCart, onQuickView }) =>
   <GridCard product={product} onAddToCart={onAddToCart} onQuickView={onQuickView} currency={currency} />;
 
 export default ProductCard;

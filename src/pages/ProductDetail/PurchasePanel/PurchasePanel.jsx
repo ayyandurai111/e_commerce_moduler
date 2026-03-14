@@ -36,7 +36,7 @@ const PurchasePanel = ({ product, onAddToCart, onBuyNow, sx = {} }) => {
   const [snack,       setSnack]       = useState({ open:false, msg:"", severity:"success" });
 
   if (!product) return null;
-  const { price, originalPrice, stock, variants, currency = "$" } = product;
+  const { price, originalPrice, stock, variants, currency = "₹" } = product;
   const inStock = (stock ?? 0) > 0;
   const maxQty  = Math.min(stock ?? 99, 99);
 

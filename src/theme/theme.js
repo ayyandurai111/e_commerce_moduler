@@ -51,8 +51,6 @@ const BRAND = {
   cardListImageWMd:   "160px",
   cardListImageWXs:   "120px",
   cardListMinH:       "160px",
-  savedCardHeight:    "320px",
-  savedCardImageHeight: "200px",
 };
 
 const hex2rgb = (hex) => {
